@@ -16,3 +16,6 @@ body {
 body {
     border-color: #000000; 
 }
+.capatalize {
+    text-transform: capitalize;
+}

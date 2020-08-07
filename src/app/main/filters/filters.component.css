@@ -81,3 +81,10 @@ html {
   .aa label {
     font-size: 10px;
   }
+
+  .filter-head {
+    text-align: center;
+    border-bottom: solid 2px;
+    margin: 10px;
+    color: #808080;
+  }

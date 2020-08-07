@@ -2,9 +2,7 @@
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
-    
     display: grid;
-    
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
@@ -17,10 +15,135 @@
   }
   
   @media only screen and (min-width: 850px) {
-    .band {
+    /* .band {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+    .thumb {
+      margin: 38px;
+    } */
   }
+
+
+
+
+  /* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    margin: 80px;
+  }
+  .item-1 {
+    width: 390px;
+  }
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    margin: 80px;
+  }
+  .item-1 {
+    width: 390px;
+  }
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    margin: 80px;
+  }
+  .item-1 {
+    width: 390px;
+  }
+}
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    margin: 80px;
+  }
+  .item-1 {
+    width: 390px;
+  }
+}
+
+/* #### iPhone 5 Portrait or Landscape #### */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    margin: 80px;
+  }
+  .item-1 {
+    width: 390px;
+  }
+}
+
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    margin: 80px;
+  }
+  .item-1 {
+    width: 390px;
+  }
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+  .thumb {
+    margin: 48px;
+  }
+}
+
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
+    .thumb {
+      margin: 48px;
+    }
+}
+
+/* #### Desktops #### */
+@media screen and (min-width: 1024px){
+  .band {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .thumb {
+    margin: 38px;
+  }
+}
+
+
+
+
+  /* @media only screen and (min-width: 350px) {
+    .band {
+      grid-template-columns: 1fr;
+    }
+  } */
   
   
   .card {
@@ -71,6 +194,13 @@
     letter-spacing: .05em;
     margin: 2em 0 0 0;
   }
-  .aa label {
+  .mission_detail {
     font-size: 10px;
+    padding: 15px;
+  }
+
+  .mission_detail span {
+    text-transform: capitalize;
+    font-size: 10px;
+    color: #6a6d92;
   }
