@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-filters',
@@ -8,28 +8,27 @@ import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@ang
 })
 export class FiltersComponent implements OnInit {
 
-  @Input() hero;
-  radioSelected = '2006';
-  form: FormGroup
-  fb: FormBuilder
+  @Input() filter;
+  @Output() valueChange = new EventEmitter();
+  form: FormGroup;
   constructor(fb: FormBuilder) {
-    if(this.hero) {
-      console.log(this.hero.filter(word => word.checked === true));
-    }
-    this.form = fb.group({
-      checkArray: ['2006']
-    })
-   }
+    this.createForm(fb);
+  }
 
   ngOnInit(): void {
+    const result = this.filter.arrdata.find(word => word.checked === true);
+    this.form.controls['checkArray'].setValue(result.value);
   }
 
-  checkValue(event) {
-    console.log(event);
+  createForm(fb): void {
+    this.form = fb.group({
+      checkArray: []
+    })
   }
 
-  onCheckboxChange(e) {
-    console.log(e)
-    console.log(this.form.value)   
+  onCheckboxChange(val, filter_name): void {
+    const me = Object.create({});
+    me[filter_name] = val;
+    this.valueChange.emit(me);
   }
 }

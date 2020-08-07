@@ -1,10 +1,10 @@
 <div>
-    <div class="filter-head"><span>{{hero.name}}</span></div>
+    <div class="filter-head"><span>{{filter.name}}</span></div>
     <div class="container">
         <form [formGroup]="form" novalidate>
-        <div *ngFor="let movie of hero.arrdata" style="display: inline;">
-            <input class="checkbox-tools" formControlName="checkArray" (change)="onCheckboxChange(movie.val)" type="radio" name="checkArray" value="{{movie.value}}" id="{{movie.val}}">
-            <label class="for-checkbox-tools" for="{{movie.val}}">{{movie.val}}</label>
+        <div *ngFor="let options of filter.arrdata" style="display: inline;">
+            <input class="checkbox-tools" formControlName="checkArray" (change)="onCheckboxChange(options.value, filter.code_name)" type="radio" value="{{options.value}}" id="{{options.val}}">
+            <label class="for-checkbox-tools" for="{{options.val}}">{{options.name}}</label>
         </div>
         </form>
     </div>

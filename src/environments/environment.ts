@@ -26,4 +26,6 @@ const injector = Injector.create([
   { provide: Environment, useClass: Environment, deps: [] }
 ]);
 
+console.log(injector.get(Injector))
+
 export const environment: Environment = injector.get(Environment);

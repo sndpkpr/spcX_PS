@@ -7,15 +7,15 @@
                     <div class="card">
                         <article>
                             <h6 style="margin: 10px; color: black;"><b>Filter</b></h6>
-                            <app-filters [hero]="LaunchYear"></app-filters>
-                            <app-filters [hero]="LaunchSuccess"></app-filters>
-                            <app-filters [hero]="LandSuccess"></app-filters>
+                            <app-filters [filter]="LaunchYear" (valueChange)='updateQuery($event)'></app-filters>
+                            <app-filters [filter]="LaunchSuccess" (valueChange)='updateQuery($event)'></app-filters>
+                            <app-filters [filter]="LandSuccess" (valueChange)='updateQuery($event)'></app-filters>
                         </article>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-9">
-                <app-cards *ngIf="aa" [cards]="aa.body"></app-cards>
+                <app-cards *ngIf="Response" [cards]="Response"></app-cards>
             </div>
         </div>
     </div>
