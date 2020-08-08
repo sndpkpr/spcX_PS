@@ -2,22 +2,31 @@
     <div class="container" style="padding-top: 65px;">
         <div class="support-grid"></div>
         <div class="row">
-            <div class="col-5 col-sm-3">
+            <div class="col-md-3">
                 <div class="item-1" style="padding-bottom: 10px;">
                     <div class="card">
-                        <article>
-                            <h6 style="margin: 10px; color: black;"><b>Filter</b></h6>
-                            <app-filters [filter]="LaunchYear" (valueChange)='updateQuery($event)'></app-filters>
-                            <app-filters [filter]="LaunchSuccess" (valueChange)='updateQuery($event)'></app-filters>
-                            <app-filters [filter]="LandSuccess" (valueChange)='updateQuery($event)'></app-filters>
-                        </article>
+                        <h6 style="margin: 10px; color: black; overflow: hidden;"><b>Filter</b></h6>
+                        <app-filters [filter]="LaunchYear" (valueChange)='updateQuery($event)'></app-filters>
+                        <app-filters [filter]="LaunchSuccess" (valueChange)='updateQuery($event)'></app-filters>
+                        <app-filters [filter]="LandSuccess" (valueChange)='updateQuery($event)'></app-filters>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-9">
-                <app-cards *ngIf="Response" [cards]="Response"></app-cards>
+            <div class="col-md-9">
+                <div class="item-1" style="padding-bottom: 10px;">
+                    <div class="card">
+                        <app-cards *ngIf="Response" [cards]="Response"></app-cards>
+                        <div class="container" style="padding: 15px;">
+                            <div class="mainbox">
+                                <div class="err">204</div>
+                                <div class="msg">No Content. Maybe no result for this query?
+                                    place?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
