@@ -1,6 +1,7 @@
 # Lighthouse performance
 
-![Lighthouse_performance](https://user-images.githubusercontent.com/30051235/89702914-79ff8500-d963-11ea-9f16-c4161b29f093.png)
+![Lighthouse_performance](https://user-images.githubusercontent.com/30051235/89732304-69d2cd00-da6b-11ea-996d-83ac57afd861.png)
+![Lighthouse_performance](https://user-images.githubusercontent.com/30051235/89732284-427c0000-da6b-11ea-9d8c-7455202c059d.png)
 
 # Ngular
 
