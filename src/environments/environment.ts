@@ -16,16 +16,16 @@
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 import { InjectionToken, Injector } from '@angular/core';
 export class Environment {
-  production: false;
-  isSecure : true;
-  baseUrl : 'api.spaceXdata.com/v3/';
-  port : 443;
+  production = false;
+  isSecure = true;
+  hostName = 'api.spaceXdata.com';
+  port = 443;
+  basePath = "/v3/";
+  baseURL = "/v3/";
 }
 
-const injector = Injector.create([
+const injector = Injector.create({providers :[
   { provide: Environment, useClass: Environment, deps: [] }
-]);
-
-console.log(injector.get(Injector))
+]});
 
 export const environment: Environment = injector.get(Environment);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest, HttpParams, HttpHeaders } from '@angular/common/http';
+  import { HttpClient, HttpRequest, HttpParams, HttpHeaders } from '@angular/common/http';
 
 import { ApiParams } from './view-model/api-params';
 import { environment } from '../../../../../environments/environment';
@@ -27,12 +27,15 @@ export class ApiService {
 
   // attach base url
   private getUrl(url: string): string {
-    console.log(environment)
-    return "https://api.spaceXdata.com/v3/" + url;
-    // return this.isSecure(environment.isSecure) + environment.baseUrl + url ;
+    return this.isSecure(environment.isSecure) + environment.hostName + ":" + environment.port + environment.basePath + url ;
   }
 
   private isSecure(isSecure: boolean): string {
     return (environment.isSecure) ?  'https://'  : 'http://' ;
+  }
+
+  getToken(): string {
+    const token =  null;
+    return token;
   }
 }

@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../lib/shared/shared.module';
-
 import { MainRoutingModule } from './main-routing.module';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { MainComponent } from './main.component';
 import { InfoPageComponent } from './info-page/info-page.component';
-// import { CoreModule } from '../lib/core/core.module';
-import { ApiService } from '../lib/core/services/api-service/api.service';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FiltersComponent } from './filters/filters.component';
 import { CardsComponent } from './cards/cards.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ApiService, ErrorHandlerService, InterceptorService, NotificationService } from '../lib/core/coreservice-index';
 
 @NgModule({
   declarations: [MainComponent, InfoPageComponent, FiltersComponent, CardsComponent],
@@ -23,6 +21,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule, ReactiveFormsModule
   ],
-  providers: [ApiService]
+  providers: [ApiService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true,
+  }]
 })
 export class MainModule { }

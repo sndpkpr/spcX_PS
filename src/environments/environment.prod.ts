@@ -4,9 +4,11 @@
 import { Injector, enableProdMode } from '@angular/core';
 export class Environment {
   production = true;
-  isSecure : true;
-  baseUrl : 'api.spaceXdata.com/v3/';
-  port : 443;
+  isSecure = true;
+  hostName = 'api.spaceXdata.com';
+  port = 443;
+  basePath = "/v3/";
+  baseURL = "/v3/";
 }
 
 const injector = Injector.create([

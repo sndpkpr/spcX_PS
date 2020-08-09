@@ -9,8 +9,6 @@
 
 // // Global Keys.
 // export const GlobalConst = {
-//   GooglePlacesKey: 'AIzaSyA7RoPDglj4z3-vhg1h1F_C1rB2fQ1Pq9k',
-//   _googleTranslateApiKey: 'AIzaSyDNcZhFnEZcTsszVEIv-UbNX0R1Aa6VRI4',
 //   mapData: {
 //     latitude: -33.868699,
 //     longitude: 151.209147,
@@ -38,34 +36,7 @@
 //     Australia: { latitude: -33.8687636, longitude: 151.2090293, location: 'MLC center Sydney NSW Australia' },
 //   },
 //   lang: '',
-//   // Used to provide 'Exclusive benefit' to selected users
-//   itkeEmail: 'Servcorp@itkexp.com',
-//   tlcEmail: 'TLC@servcorpcommunity.com',
-//   jethroEmail: 'jethro.clayton@servcorp.com.au',
-//   sussaneEmail: 's.macphillamy@gmail.com',
-//   charlesRobinsonEmail: 'charles.robinson@servcorp.com',
-//   melusineheyvaertEmail: 'Melusine.heyvaert@servcorp.be',
-//   EmmaleneWysockiEmail: 'Emmalene.Wysocki@servcorp.com.au',
-//   ServcorpCommunityEmail: 'community@servcorp.com',
-//   GuidEmpty: '00000000-0000-0000-0000-000000000000',
-//   TlcBenefitID: 'd8f749ca-f1f4-e711-80d2-000d3aa1e60f', // Live
-//   DataSaveSuccessfully: 'Data Saved Successfully',
-//   uploadedsuccessfully: 'uploaded successfully',
-//   UnauthorizedAccess : 'Unauthorized Access',
-//   minContentCountThreshold: 2000,
-//   TrinetBenefitKeyId: 167,
-//   JetsmarterKeyId: 171,
-//   PinnedPostCommunityEmailQC : 'community@smservcorp.com',
-//   PinnedPostCommunityEmailLV : 'community@servcorp.com',
-//   VeroServcorpLocationId : '692346aa-75fe-e611-80c5-000d3aa1e60f',
-//   MaldivesBenefitIdLive: 'a107f890-d996-e811-80da-000d3aa1e60f',
-//   MaldivesBenefitIdQC: '41836d0d-f296-e811-80da-000d3aa1e60f',
-//   UsCountryId: 'd6db489e-75fe-e611-80c5-000d3aa1e60f',
-//   ServcorpHomeMergingIDQC: 'b66273a3-e4ac-e811-80db-000d3aa1e60f',
-//   ServcorpHomeMergingIDLive: 'a9368f71-f9ac-e811-80db-000d3aa1e60f',
-//   TrinetBenefitID: '2b7dcb25-7328-e811-80d4-000d3aa1e60f',
-//   EtihadBenefitID: '271aee38-c453-e811-80d5-000d3aa1e60f'
-// };
+
 
 // // moment date format constants.
 // export const momentConst = {
@@ -82,48 +53,39 @@
 
 // // error handler contstants
 export enum StatusCode {
-    Ok = 200,
-    Created = 201,
-    BadRequest = 400,
-    Unauthorized = 401,
-    Forbidden = 403,
-    NotFound = 404,
-    InteralServerError = 500
-  }
-  // export enum GlobalDatabaseObjects {
-  //   Individual_Dashboard_Feed_Post = 22,
-  //   Post_Like = 2,
-  //   Post_Comment = 3,
-  //   Post_Others_Comment = 15,
-  //   Comment_reply = 19,
-  //   Same_Comment_Reply = 21,
-  //   Comment_Like = 20,
-  //   Connection_Post = 10
-  // }
-  export const StatusMessage = {
-    Ok: 'OK (Deleted, GET , UPDATED)',
-    Created: 'Created (CREATED)',
-    BadRequest: 'Bad Request (MISSING REQUIED INFO)',
-    Unauthorized: 'Unauthorized (AUTHENTICATION REQUIRED)',
-    Forbidden: 'Forbidden (YOU ARE NOT AUTHORIZED TO ACCESS)',
-    NotFound: '404 Not Found (RECORD NOT FOUND)',
-    InteralServerError: '500 Internal Server Error (DATABASE ERROR, CONNECTION,MISC SERVER ISSUE)'
-  };
-  // Core API Urls
-  export const CoreAPIURLs = {
-    loginUrl: 'api/Auth/login',
-    registerUrl: 'api/Auth/register',
-    forgetPassword: 'api/Auth/forgetPassword'
-    // getCategoryListUrl: 'api/common/getCategoryList',
-    // getGroupListUrl: 'api/common/getGroupList',
-    // getEventListUrl: 'api/common/getEventList',
-    // getDiscussionListUrl: 'api/common/getDiscussionList',
-    // uploadImageToCloudinary: 'api/cloudinary/uploadImageToCloudinary',
-    // uploadFile: 'api/Facilitator/upload',
-    // deactivateBulkUser: '/api/Facilitator/uploadDeactivatingUser',
-    // getAllConnectionByIdForTagging: 'api/common/getAllConnectionByIdForTagging',
-    // generateSignatureForCloudinary: 'api/cloudinary/generateSignatureForCloudinary'
-  };
+  Ok = 200,
+  Created = 201,
+  BadRequest = 400,
+  Unauthorized = 401,
+  Forbidden = 403,
+  NotFound = 404,
+  InteralServerError = 500
+}
+// export enum GlobalDatabaseObjects {
+//   Individual_Dashboard_Feed_Post = 22,
+//   Post_Like = 2,
+//   Post_Comment = 3,
+//   Post_Others_Comment = 15,
+//   Comment_reply = 19,
+//   Same_Comment_Reply = 21,
+//   Comment_Like = 20,
+//   Connection_Post = 10
+// }
+export const StatusMessage = {
+  Ok: 'OK (Deleted, GET , UPDATED)',
+  Created: 'Created (CREATED)',
+  BadRequest: 'Bad Request (MISSING REQUIED INFO)',
+  Unauthorized: 'Unauthorized (AUTHENTICATION REQUIRED)',
+  Forbidden: 'Forbidden (YOU ARE NOT AUTHORIZED TO ACCESS)',
+  NotFound: '404 Not Found (RECORD NOT FOUND)',
+  InteralServerError: '500 Internal Server Error (DATABASE ERROR, CONNECTION,MISC SERVER ISSUE)'
+};
+// Core API Urls
+export const CoreAPIURLs = {
+  loginUrl: 'api/Auth/login',
+  registerUrl: 'api/Auth/register',
+  forgetPassword: 'api/Auth/forgetPassword'
+};
   // export const PlaceholderImagePaths = {
   //   noImageURL: 'api/Account/token'
   // };
@@ -142,15 +104,8 @@ export enum StatusCode {
   //   TWELVE = 12,
   //   THIRTEEN = 13
   // }
-  
+
   // export const CountryName = {
   //   Japan: 'Japan',
   //   USA: 'USA'
   // };
-  
-  // export const NotificationFilterType = {
-  //   Event: 1,
-  //   Benefit: 4,
-  //   Product: 9
-  // };
-  
