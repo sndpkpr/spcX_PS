@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-  import { HttpClient, HttpRequest, HttpParams, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
 
 import { ApiParams } from './view-model/api-params';
 import { environment } from '../../../../../environments/environment';
@@ -10,10 +12,10 @@ import { environment } from '../../../../../environments/environment';
 @Injectable()
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // common get method for all http requests
-  getData(url: string, reqAPIParams: ApiParams[] | null) {
+  getData(url: string, reqAPIParams: ApiParams[] | null): Observable<HttpResponse<object>> {
     let newHTTPParams = new HttpParams();
     if (reqAPIParams != null) {
       reqAPIParams.forEach(element => {
@@ -21,13 +23,13 @@ export class ApiService {
       });
     }
     return this.http.get(this.getUrl(url), { params: newHTTPParams, observe: 'response' }).pipe(
-      // catchError(this.handleError)
+      catchError(this.handleError)
     );
   }
 
   // attach base url
   private getUrl(url: string): string {
-    return this.isSecure(environment.isSecure) + environment.hostName + ":" + environment.port + environment.basePath + url ;
+    return this.isSecure(environment.isSecure) + environment.hostName + ':' + environment.port + environment.basePath + url ;
   }
 
   private isSecure(isSecure: boolean): string {
@@ -38,4 +40,10 @@ export class ApiService {
     const token =  null;
     return token;
   }
+
+  public handleError = (error: Response) => {
+    // this.errorhandler.handleError(error.status);
+    return throwError(error);
+  }
+
 }

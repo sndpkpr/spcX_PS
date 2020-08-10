@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export class ErrorHandlerService implements ErrorHandler {
   constructor(private notificationservice: NotificationService, private router: Router) { }
 
-  handleError(error) {
+  handleError(error): void {
     switch (error) {
       case StatusCode.Unauthorized: {
         localStorage.clear();

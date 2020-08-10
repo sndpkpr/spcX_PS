@@ -7,13 +7,13 @@ export class Environment {
   isSecure = true;
   hostName = 'api.spaceXdata.com';
   port = 443;
-  basePath = "/v3/";
+  basePath = '/v3/;
   baseURL = "/v3/";
 }
 
-const injector = Injector.create([
+const injector = Injector.create({ providers: [
   { provide: Environment, useClass: Environment, deps: [] }
-]);
+]});
 
 export const environment: Environment = injector.get(Environment);
 

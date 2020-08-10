@@ -23,7 +23,7 @@ export class InterceptorService implements HttpInterceptor {
       req.headers.append('Cache-Control', 'no-cache');
       req.headers.append('Pragma', 'no-cache');
      }
-     if (this.apiservice.getToken()) {
+    if (this.apiservice.getToken()) {
        req = req.clone({
          setHeaders: {
            Authorization: `Bearer ${this.apiservice.getToken()}`

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node dist/ngular/server/main.js",
-    "build": "ng build --prod && ng run ngular:server:production",
+    "build": "ng lint && ng build --prod && ng run ngular:server:production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

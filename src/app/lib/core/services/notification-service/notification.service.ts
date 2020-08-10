@@ -14,44 +14,43 @@ export class NotificationService {
     this.notificationCount = 0;
     this.messageNotificationCount = 0;
   }
-  // set notification  count
-  SetNotificationCountInHeader(notificationCount?: number) {
+
+  SetNotificationCountInHeader(notificationCount?: number): void {
     this.notificationCount = notificationCount;
   }
-  // set notification  count
-  GetNotificationCountInHeader() {
+
+  GetNotificationCountInHeader(): number {
     return this.notificationCount;
   }
 
-  // set message  count
-  SetMessageCountInHeader(messagecount?: number) {
+  SetMessageCountInHeader(messagecount?: number): void {
     this.messageNotificationCount = messagecount;
   }
-  // set message  count
-  GetMessageCountInHeader() {
+
+  GetMessageCountInHeader(): number {
     return this.messageNotificationCount;
   }
 
-  Success(body: { message?: string, title?: string }) {
+  Success(body: { message?: string, title?: string }): object {
     return this.toastr.success(this.TranslateMessage(body.message), body.title);
   }
 
-  Error(body: { message?: string, title?: string }) {
+  Error(body: { message?: string, title?: string }): object {
     return this.toastr.error(this.TranslateMessage(body.message), body.title);
   }
 
-  Warning(body: { message?: string, title?: string }) {
+  Warning(body: { message?: string, title?: string }): object {
     return this.toastr.warning(this.TranslateMessage(body.message), body.title);
   }
 
-  Info(body: { message?: string, title?: string }) {
+  Info(body: { message?: string, title?: string }): object {
     return this.toastr.info(this.TranslateMessage(body.message), body.title);
   }
 
   private TranslateMessage(message: string): string {
     return message;
   }
-  closeAllToaster() {
+  closeAllToaster(): void {
     this.toastr.clear();
   }
 }

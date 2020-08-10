@@ -1,6 +1,6 @@
-export interface query {
-    launch_success: String,
-    land_success: String,
-    launch_year: String
-    limit: String;
+export interface Query {
+    launch_success: string;
+    land_success: string;
+    launch_year: string;
+    limit: string;
 }

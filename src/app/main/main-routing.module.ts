@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children : [ 
+    children : [
       {
         path: 'info',
         component: InfoPageComponent

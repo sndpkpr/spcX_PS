@@ -1,8 +1,8 @@
-export interface response {
-    logo?: String,
-    mission_name: String,
-    mission_id: String ,
-    launch_year: String,
-    land_success:Boolean,
-    launch_success: Boolean
-  }
+export interface Response {
+  logo?: string;
+  mission_name: string;
+  mission_id: string;
+  launch_year: string;
+  land_success: boolean;
+  launch_success: boolean;
+}

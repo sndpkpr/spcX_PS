@@ -17,18 +17,18 @@ export class FiltersComponent implements OnInit {
 
   ngOnInit(): void {
     const result = this.filter.arrdata.find(word => word.checked === true);
-    this.form.controls['checkArray'].setValue(result.value);
+    this.form.controls.checkArray.setValue(result.value);
   }
 
   createForm(fb): void {
     this.form = fb.group({
       checkArray: []
-    })
+    });
   }
 
-  onCheckboxChange(val, filter_name): void {
+  onCheckboxChange(val, filterName): void {
     const me = Object.create({});
-    me[filter_name] = val;
+    me[filterName] = val;
     this.valueChange.emit(me);
   }
 }
