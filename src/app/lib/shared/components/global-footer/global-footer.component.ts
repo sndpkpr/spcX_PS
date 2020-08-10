@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./global-footer.component.css']
 })
 export class GlobalFooterComponent implements OnInit {
-
+  developer = 'Sandeep Kapri';
   constructor() { }
 
   ngOnInit(): void {
