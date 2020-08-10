@@ -14,19 +14,21 @@
             </div>
             <div class="col-md-9">
                 <div class="item-1" style="padding-bottom: 10px;">
-                    <div class="card">
-                        <app-cards *ngIf="Response" [cards]="Response"></app-cards>
-                        <div class="container" style="padding: 15px;">
-                            <div class="mainbox">
-                                <div class="err">204</div>
-                                <div class="msg">No Content. Maybe no result for this query?
-                                    place?
+                    <div class="card" style="padding: 15px;">
+                        <app-cards *ngIf="Response.length; else elseBlock" [cards]="Response"></app-cards>
+                        <ng-template #elseBlock>
+                            <div class="container">
+                                <div class="mainbox">
+                                    <div class="err">204</div>
+                                    <div class="msg">No Content. Maybe no result for this query?
+                                        place?
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </ng-template>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+</div>
