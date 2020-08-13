@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FiltersComponent implements OnInit {
 
-  @Input() filter;
+  @Input() filter: {name: string; code_name: string; arrdata: [{ val: string; checked: boolean; name: string; value: string}]};
   @Output() valueChange = new EventEmitter();
   form: FormGroup;
   constructor(fb: FormBuilder) {
@@ -16,7 +16,17 @@ export class FiltersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const result = this.filter.arrdata.find(word => word.checked === true);
+    this.findChecked();
+  }
+
+  findChecked(): void {
+    if (this.filter) {
+      const result = this.filter.arrdata.find(word => word.checked === true);
+      this.setFormInit(result);
+    }
+  }
+
+  setFormInit(result): void {
     this.form.controls.checkArray.setValue(result.value);
   }
 

@@ -11,7 +11,7 @@ export class ErrorHandlerService implements ErrorHandler {
     switch (error) {
       case StatusCode.Unauthorized: {
         localStorage.clear();
-        this.router.navigate(['/companylogin']);
+        this.router.navigate(['/']);
         break;
       }
       case StatusCode.BadRequest: {

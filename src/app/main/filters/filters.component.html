@@ -1,11 +1,11 @@
 <div>
-    <div class="filter-head"><span>{{filter.name}}</span></div>
+    <div class="filter-head"><span>{{filter?.name}}</span></div>
     <div class="container">
         <form [formGroup]="form" novalidate>
-        <div *ngFor="let options of filter.arrdata" class="outer-container-cb">
+        <div *ngFor="let options of filter?.arrdata" class="outer-container-cb">
             <div class="inner-container-cb">
                 <input class="checkbox-tools" formControlName="checkArray" (change)="onCheckboxChange(options.value, filter.code_name)" type="radio" value="{{options.value}}" id="{{options.val}}">
-                <label class="for-checkbox-tools" for="{{options.val}}">{{options.name}}</label>
+                <label class="for-checkbox-tools" for="{{options.val}}">{{options?.name}}</label>
             </div>
         </div>
         </form>

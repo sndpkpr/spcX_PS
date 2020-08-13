@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import {FormBuilder} from '@angular/forms';
 
+import { ApiService } from '../../lib/core/services/api-service/api.service';
 import { InfoPageComponent } from './info-page.component';
 
 describe('InfoPageComponent', () => {
@@ -8,7 +11,8 @@ describe('InfoPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfoPageComponent ]
+      declarations: [ InfoPageComponent ],
+      providers: [ ApiService, HttpClient, HttpHandler, FormBuilder ]
     })
     .compileComponents();
   }));
@@ -21,5 +25,9 @@ describe('InfoPageComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
   });
 });

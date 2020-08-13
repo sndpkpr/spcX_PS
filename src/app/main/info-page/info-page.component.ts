@@ -33,6 +33,7 @@ export class InfoPageComponent implements OnInit {
     this.apiservice.getData('launches', this.convertToReqQuery(this.launchQuery)).subscribe( res => {
       if (res.ok) {
         this.Response = res.body;
+        this.Response.isDataPresent = this.Response.toString().length;
       } else {
       }
     });
