@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS, } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { ApiService, ErrorHandlerService, InterceptorService, NotificationService } from '../core/coreservice-index';
@@ -11,7 +10,6 @@ import { ApiService, ErrorHandlerService, InterceptorService, NotificationServic
   imports: [
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [ ApiService, ErrorHandlerService, NotificationService, InterceptorService, {
@@ -20,7 +18,6 @@ import { ApiService, ErrorHandlerService, InterceptorService, NotificationServic
     multi: true,
   }],
   exports: [HttpClientModule,
-    BrowserAnimationsModule, // required animations module
     ToastrModule]
 })
 export class CoreModule { }
