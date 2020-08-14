@@ -2,7 +2,7 @@ export const LaunchYear = {
     name : 'Launch Year',
     code_name: 'launch_year',
     arrdata : [
-        { val : '2006', checked: true, name: '2006', value: '2006'},
+        { val : '2006', checked: false, name: '2006', value: '2006'},
         { val : '2007', checked: false, name: '2007', value: '2007'},
         { val : '2008', checked: false, name: '2008', value: '2008'},
         { val : '2009', checked: false,  name: '2009', value: '2009'},
@@ -16,7 +16,7 @@ export const LaunchYear = {
         { val : '2017', checked: false, name: '2017', value: '2017'},
         { val : '2018', checked: false, name: '2018', value: '2018'},
         { val : '2019', checked: false, name: '2019', value: '2019'},
-        { val : '2020', checked: false, name: '2020', value: '2020'}
+        { val : '2020', checked: true, name: '2020', value: '2020'}
     ]
 };
 
