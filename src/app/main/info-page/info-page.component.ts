@@ -3,7 +3,6 @@ import { ApiService } from '../../lib/core/services/api-service/api.service';
 import { Response } from './const/view-models/lanuch_response';
 import { Query } from './const/view-models/launch_query';
 import { LaunchYear, LaunchSuccess, LandSuccess } from './const/view-models/years';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { ApiParams } from '../../lib/core/services/api-service/view-model/api-params';
 
 @Component({
@@ -13,6 +12,7 @@ import { ApiParams } from '../../lib/core/services/api-service/view-model/api-pa
 })
 export class InfoPageComponent implements OnInit {
   Response ;
+  query_made: boolean;
   LaunchYear = LaunchYear; LaunchSuccess = LaunchSuccess; LandSuccess = LandSuccess;
   launchQuery: Query = {
     launch_success : LaunchSuccess.arrdata.find(word => word.checked === true).value,
@@ -21,8 +21,7 @@ export class InfoPageComponent implements OnInit {
     limit: '100'
   };
 
-  form: FormGroup;
-  constructor(private apiservice: ApiService, fb: FormBuilder) {
+  constructor(private apiservice: ApiService) {
   }
 
   ngOnInit(): void {
@@ -30,7 +29,9 @@ export class InfoPageComponent implements OnInit {
   }
 
   getMissions(): void {
+    this.query_made = true;
     this.apiservice.getData('launches', this.convertToReqQuery(this.launchQuery)).subscribe( res => {
+      this.query_made = false;
       if (res.ok) {
         this.Response = res.body;
         this.Response.isDataPresent = this.Response.toString().length;

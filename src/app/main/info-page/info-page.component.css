@@ -1,11 +1,12 @@
 .mainbox {
     padding: 10px;
-    background-color: #95c2de;
     margin: auto;
     height: 600px;
     width: 100%;
     position: relative;
     text-align: center;
+    background-color: black;
+    /* background: url('https://static.wixstatic.com/media/018d49_5f33cea5cf6b4ffa8a139a87e2a8d747~mv2.gif'); */
 }
 .err {
     color: #ffffff;
