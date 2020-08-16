@@ -1,4 +1,4 @@
-<div style="background:#dbd7d7;">
+<div style="background:#dbd7d7; width: 105.2%;">
     <div class="container" style="padding-top: 65px;">
         <div class="support-grid"></div>
         <div class="row">
@@ -18,10 +18,15 @@
                         <app-cards *ngIf="Response?.isDataPresent; else elseBlock" [cards]="Response"></app-cards>
                         <ng-template #elseBlock>
                             <div class="container">
-                                <div class="mainbox">
-                                    <div class="err">204</div>
-                                    <div class="msg">No Content. Maybe no result for this query?
-                                        place?
+                                <div class="mainbox" style="background : url('https://static.wixstatic.com/media/018d49_5f33cea5cf6b4ffa8a139a87e2a8d747~mv2.gif')">
+                                    <div *ngIf="!query_made">
+                                        <div class="err">204</div>
+                                        <div class="msg">No Content. Maybe no result for query
+                                            launch_success : {{launchQuery.launch_success}} land_success : {{launchQuery.land_success}} launch_year : {{launchQuery.launch_year}}
+                                        </div>
+                                    </div>
+                                    <div *ngIf="query_made">
+                                        <div class="err">Loading</div>
                                     </div>
                                 </div>
                             </div>
