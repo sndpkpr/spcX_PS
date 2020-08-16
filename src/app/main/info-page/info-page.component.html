@@ -20,10 +20,10 @@
                             <div class="container">
                                 <div class="mainbox">
                                     <div>
-                                        <div *ngIf="!query_made" class="err">204</div>
-                                        <div *ngIf="query_made" class="err">Loading...</div>
-                                        <div *ngIf="!query_made" class="msg">No Content. Maybe no result for query
-                                            launch_success : {{launchQuery.launch_success}} land_success : {{launchQuery.land_success}} launch_year : {{launchQuery.launch_year}}
+                                        <div *ngIf="!queryMade" class="err">204</div>
+                                        <div *ngIf="queryMade" class="err">Loading...</div>
+                                        <div *ngIf="!queryMade" class="msg">No Content. Maybe no result for query
+                                            launch_success : {{launchQuery.launch_success}}, land_success : {{launchQuery.land_success}}, launch_year : {{launchQuery.launch_year}}
                                         </div>
                                     </div>
                                 </div>

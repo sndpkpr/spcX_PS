@@ -12,7 +12,7 @@ import { ApiParams } from '../../lib/core/services/api-service/view-model/api-pa
 })
 export class InfoPageComponent implements OnInit {
   Response ;
-  query_made: boolean;
+  queryMade: boolean;
   LaunchYear = LaunchYear; LaunchSuccess = LaunchSuccess; LandSuccess = LandSuccess;
   launchQuery: Query = {
     launch_success : LaunchSuccess.arrdata.find(word => word.checked === true).value,
