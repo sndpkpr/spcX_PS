@@ -29,9 +29,9 @@ export class InfoPageComponent implements OnInit {
   }
 
   getMissions(): void {
-    this.query_made = true;
+    this.queryMade = true;
     this.apiservice.getData('launches', this.convertToReqQuery(this.launchQuery)).subscribe( res => {
-      this.query_made = false;
+      this.queryMade = false;
       if (res.ok) {
         this.Response = res.body;
         this.Response.isDataPresent = this.Response.toString().length;
