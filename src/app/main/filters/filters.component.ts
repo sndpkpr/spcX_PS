@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-filters',
@@ -10,34 +9,15 @@ export class FiltersComponent implements OnInit {
 
   @Input() filter: {name: string; code_name: string; arrdata: [{ val: string; checked: boolean; name: string; value: string}]};
   @Output() valueChange = new EventEmitter();
-  form: FormGroup;
-  constructor(fb: FormBuilder) {
-    this.createForm(fb);
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-    this.findChecked();
-  }
-
-  findChecked(): void {
-    if (this.filter) {
-      const result = this.filter.arrdata.find(word => word.checked === true);
-      this.setFormInit(result);
-    }
-  }
-
-  setFormInit(result): void {
-    this.form.controls.checkArray.setValue(result.value);
-  }
-
-  createForm(fb): void {
-    this.form = fb.group({
-      checkArray: []
-    });
-  }
+  ngOnInit(): void {}
 
   onCheckboxChange(val, filterName): void {
     const me = Object.create({});
+    this.filter.arrdata.map( x => {
+      x.checked = (val === x.value) ?  true : false ;
+    });
     me[filterName] = val;
     this.valueChange.emit(me);
   }

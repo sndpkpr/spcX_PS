@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { FiltersComponent } from './filters.component';
 
@@ -9,8 +8,7 @@ describe('FiltersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiltersComponent ],
-      providers: [ FormBuilder ]
+      declarations: [ FiltersComponent ]
     })
     .compileComponents();
   }));

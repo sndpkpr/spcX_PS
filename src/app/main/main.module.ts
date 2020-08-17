@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../lib/shared/shared.module';
 import { MainRoutingModule } from './main-routing.module';
 
@@ -16,7 +15,6 @@ import { CoreModule } from '../lib/core/core.module';
     CommonModule,
     MainRoutingModule,
     SharedModule,
-    FormsModule, ReactiveFormsModule,
     CoreModule
   ]
 })
