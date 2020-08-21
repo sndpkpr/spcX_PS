@@ -6,16 +6,16 @@
                 <div class="item-1" style="padding-bottom: 10px;">
                     <div class="card">
                         <h6 style="margin: 10px; color: black; overflow: hidden;"><b>Filters</b></h6>
-                        <app-filters [filter]="LaunchYear" (valueChange)='updateQuery($event)'></app-filters>
-                        <app-filters [filter]="LaunchSuccess" (valueChange)='updateQuery($event)'></app-filters>
-                        <app-filters [filter]="LandSuccess" (valueChange)='updateQuery($event)'></app-filters>
+                        <app-filters [filter]="LaunchYear"></app-filters>
+                        <app-filters [filter]="LaunchSuccess"></app-filters>
+                        <app-filters [filter]="LandSuccess"></app-filters>
                     </div>
                 </div>
             </div>
             <div class="col-md-9">
                 <div class="item-1" style="padding-bottom: 10px;">
                     <div class="card" style="padding: 15px;">
-                        <app-cards *ngIf="Response?.isDataPresent; else elseBlock" [cards]="Response"></app-cards>
+                        <app-cards *ngIf="Response?.isDataPresent; else elseBlock" [cards]="Response?.body"></app-cards>
                         <ng-template #elseBlock>
                             <div class="container">
                                 <div class="mainbox">
@@ -23,7 +23,9 @@
                                         <div *ngIf="!queryMade" class="err">204</div>
                                         <div *ngIf="queryMade" class="err">Loading...</div>
                                         <div *ngIf="!queryMade" class="msg">No Content. Maybe no result for query
-                                            launch_success : {{launchQuery.launch_success}}, land_success : {{launchQuery.land_success}}, launch_year : {{launchQuery.launch_year}}
+                                            <span *ngIf="launchQuery?.launch_success">launch_success : {{launchQuery.launch_success}}, </span>
+                                            <span *ngIf="launchQuery?.land_success">land_success : {{launchQuery.land_success}}, </span>
+                                            <span *ngIf="launchQuery?.launch_year">launch_year : {{launchQuery.launch_year}}</span>
                                         </div>
                                     </div>
                                 </div>

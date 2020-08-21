@@ -16,7 +16,7 @@ export const LaunchYear = {
         { val : '2017', checked: false, name: '2017', value: '2017'},
         { val : '2018', checked: false, name: '2018', value: '2018'},
         { val : '2019', checked: false, name: '2019', value: '2019'},
-        { val : '2020', checked: true, name: '2020', value: '2020'}
+        { val : '2020', checked: false, name: '2020', value: '2020'}
     ]
 };
 
@@ -24,7 +24,7 @@ export const LaunchSuccess = {
     name : 'Successful Launch',
     code_name: 'launch_success',
     arrdata : [
-        { val : 'true',  checked: true,  name: 'true',  value: 'true'},
+        { val : 'true',  checked: false,  name: 'true',  value: 'true'},
         { val : 'false', checked: false, name: 'false', value: 'false'}
     ]
 };
@@ -33,7 +33,7 @@ export const LandSuccess = {
     name : 'Successful Land',
     code_name: 'land_success',
     arrdata : [
-        { val : 'true1',  checked: true,  name: 'true',  value: 'true'},
+        { val : 'true1',  checked: false,  name: 'true',  value: 'true'},
         { val : 'false2', checked: false, name: 'false', value: 'false'}
     ]
 };
