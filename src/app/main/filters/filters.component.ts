@@ -16,7 +16,7 @@ export class FiltersComponent implements OnInit {
   }
 
   private setFilterInit(): void {
-    const checkedFiler = this.mainServiceService.getQueryParms()[this.filter.code_name];
+    const checkedFiler = this.mainServiceService.getQueryParms()[this.filter?.code_name];
     if (checkedFiler) {
       this.filter.arrdata.map(x => { x.checked = x.value === checkedFiler ? true : false; });
     }

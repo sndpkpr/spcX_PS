@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClient, HttpHandler } from '@angular/common/http';
-import {FormBuilder} from '@angular/forms';
-
+import { ApiService } from '../../lib/core/coreservice-index';
 import { MainServiceService } from '../services/main-service.service';
 import { InfoPageComponent } from './info-page.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('InfoPageComponent', () => {
   let component: InfoPageComponent;
@@ -11,8 +11,9 @@ describe('InfoPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientTestingModule],
       declarations: [ InfoPageComponent ],
-      providers: [ MainServiceService, HttpClient, HttpHandler, FormBuilder ]
+      providers: [ MainServiceService, ApiService ]
     })
     .compileComponents();
   }));
