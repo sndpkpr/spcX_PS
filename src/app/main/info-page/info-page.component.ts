@@ -18,15 +18,17 @@ export class InfoPageComponent implements OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.mainServiceService.isOpen2$.subscribe( x => {
-      this.queryMade = x;
+    this.mainServiceService.getLaunchInitData().subscribe(x => {
+      this.Response = x;
     });
-
     this.mainServiceService.isOpen$.subscribe( x => {
       if (x) {
         this.Response = x;
         this.launchQuery = x.launchQuery;
       }
+    });
+    this.mainServiceService.isOpen2$.subscribe( x => {
+      this.queryMade = x;
     });
   }
 

@@ -6,5 +6,5 @@ import { Response } from '../info-page/const/view-models/lanuch_response';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
-  @Input() cards: Response;
+  @Input() cards: Response[];
 }

@@ -14,7 +14,7 @@ export class MainServiceService {
     launch_year: LaunchYear.arrdata.find(word => word.checked === true)?.value,
     limit: '100'
   };
-  public isOpen$ = new BehaviorSubject<any>(this.getLaunchData());
+  public isOpen$ = new BehaviorSubject<any>(undefined);
   public isOpen2$ = new BehaviorSubject<boolean>(true);
   constructor(private apiservice: ApiService, private route: ActivatedRoute, private router: Router) { }
 
@@ -49,6 +49,10 @@ export class MainServiceService {
         this.isOpen$.next(response);
       }
     });
+  }
+
+  public getLaunchInitData(): any {
+    return this.apiservice.getData('launches', this.convertToReqQuery());
   }
 
   private convertToReqQuery(): ApiParams[] {
