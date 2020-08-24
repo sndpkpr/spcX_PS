@@ -1,3 +1,9 @@
+# About Application
+
+Click [here](https://ps-xt.herokuapp.com/) for landing page & for [launch-info](https://ps-xt.herokuapp.com/info) demo, this application uses [angular-universal](https://angular.io/guide/universal) for demonstrating server-side-rendering to make application SEO friendly for web-crawlers.
+
+[Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+
 # Lighthouse performance
 
 ![Lighthouse_performance](https://user-images.githubusercontent.com/30051235/89732304-69d2cd00-da6b-11ea-996d-83ac57afd861.png)
@@ -34,9 +40,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-
-
-
-
-
