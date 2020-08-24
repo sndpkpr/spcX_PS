@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HTTP_INTERCEPTORS, } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
 import { ApiService, ErrorHandlerService, InterceptorService, NotificationService } from '../core/coreservice-index';
@@ -9,7 +9,6 @@ import { ApiService, ErrorHandlerService, InterceptorService, NotificationServic
   declarations: [],
   imports: [
     CommonModule,
-    HttpClientModule,
     ToastrModule.forRoot()
   ],
   providers: [ ApiService, ErrorHandlerService, NotificationService, InterceptorService, {
@@ -17,7 +16,7 @@ import { ApiService, ErrorHandlerService, InterceptorService, NotificationServic
     useClass: InterceptorService,
     multi: true,
   }],
-  exports: [HttpClientModule,
+  exports: [
     ToastrModule]
 })
 export class CoreModule { }

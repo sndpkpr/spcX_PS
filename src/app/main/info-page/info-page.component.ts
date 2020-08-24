@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit } from '@angular/core';
 import { Query } from './const/view-models/launch_query';
 import { LaunchYear, LaunchSuccess, LandSuccess } from './const/data/static_filter';
 import { MainServiceService } from '../services/main-service.service';
@@ -8,22 +8,25 @@ import { MainServiceService } from '../services/main-service.service';
   templateUrl: './info-page.component.html',
   styleUrls: ['./info-page.component.css']
 })
-export class InfoPageComponent implements OnDestroy {
+export class InfoPageComponent implements OnDestroy, AfterViewInit {
   Response ;
   LaunchYear = LaunchYear; LaunchSuccess = LaunchSuccess; LandSuccess = LandSuccess;
-  queryMade = false;
+  queryMade = true;
   launchQuery: Query;
 
   constructor(private mainServiceService: MainServiceService) {
+  }
+
+  ngAfterViewInit() {
+    this.mainServiceService.isOpen2$.subscribe( x => {
+      this.queryMade = x;
+    });
+
     this.mainServiceService.isOpen$.subscribe( x => {
-      this.queryMade = false;
       if (x) {
         this.Response = x;
         this.launchQuery = x.launchQuery;
       }
-    });
-    this.mainServiceService.isOpen2$.subscribe( x => {
-      this.queryMade = true;
     });
   }
 

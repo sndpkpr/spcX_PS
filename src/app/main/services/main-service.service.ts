@@ -40,10 +40,10 @@ export class MainServiceService {
   private getLaunchData(): void {
     this.isOpen2$?.next(true);
     this.apiservice.getData('launches', this.convertToReqQuery()).subscribe( res => {
+      this.isOpen2$?.next(false);
       if (res.ok) {
         const response = {
           body : res.body,
-          isDataPresent : res.body.toString().length ? true : false,
           launchQuery: this.launchQuery
         };
         this.isOpen$.next(response);
