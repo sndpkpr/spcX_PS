@@ -11,8 +11,6 @@ Click [here](https://ps-xt.herokuapp.com/) for landing page, this application us
 ---
 ---
 
-![Lighthouse_performance](https://user-images.githubusercontent.com/30051235/89732284-427c0000-da6b-11ea-9d8c-7455202c059d.png)
-
 # Ngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
