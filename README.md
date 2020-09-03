@@ -1,6 +1,6 @@
 # About Application
 
-Click [here](https://ps-xt.herokuapp.com/) for landing page & for [launch-info](https://ps-xt.herokuapp.com/info) demo, this application uses [angular-universal](https://angular.io/guide/universal) for demonstrating server-side-rendering to make application SEO friendly for web-crawlers.
+Click [here](https://ps-xt.herokuapp.com/) for landing page, this application uses [angular-universal](https://angular.io/guide/universal) for demonstrating server-side-rendering to make application SEO friendly for web-crawlers.
 
 [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
